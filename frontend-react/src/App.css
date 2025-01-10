@@ -1,0 +1,347 @@
+@import url(./animations.css);
+
+.App {
+    min-height: 100vh;
+}
+
+#header {
+    mix-blend-mode: difference;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    width: 100%;
+    color: var(--bg-color);
+
+    & #logo {
+        width: 50px;
+        cursor: pointer;
+        /* transform: rotateY(180deg); */
+    }
+
+    & nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        & a {
+            text-decoration: none;
+            padding: .5rem 1rem;
+            color: inherit;
+            text-wrap: nowrap;
+            position: relative;
+            min-width: 6vw;
+            text-align: center;
+            transition: .5s;
+
+            &:hover::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: var(--bg-color);
+            }
+        }
+    }
+
+    & .btn-login {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        color: inherit;
+        gap: .5rem;
+        border: none;
+        cursor: pointer;
+        padding: .5rem 1rem;
+        border-radius: .5rem;
+        font-size: inherit;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.200);
+            transition: .5s;
+        }
+    }
+}
+
+#initial {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* border-radius: 0 0 100px 100px; */
+    overflow: hidden;
+    /* clip-path: circle(100vw at 50% -80vh); */
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 55%;
+        z-index: -1;
+    }
+
+    & span {
+        position: absolute;
+        top: 30%;
+        left: 52%;
+        transform: translate(-50%, -50%) rotateY(50deg);
+        letter-spacing: 2rem;
+        font-size: 15vw;
+        font-weight: bold;
+        background: linear-gradient(to bottom, var(--bg-color), 70%, rgb(62, 62, 62));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+   
+}
+
+#cars {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 4rem;
+    overflow-x: auto;
+    width: 100%;
+    gap: 3rem;
+
+
+    & .card-car {
+        border-radius: 2rem;
+        border: 2px var(--text-color) solid;
+        padding: 2rem;
+        position: relative;
+        width: 18rem;
+        transition: .2s;
+
+        /* animation: fadeIn linear; */
+
+        &:hover {
+            scale: 1.02;
+            box-shadow: 0 .3rem .5rem -.1rem var(--text-color);
+        }
+
+        &>img {
+            /* position: absolute; */
+            align-self: center;
+            margin: 0 auto;
+            margin-top: -100px;
+            display: block;
+            max-width: 220px;
+        }
+
+        & h1 {
+            font-weight: 400;
+            text-align: center;
+        }
+
+        & p {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        & button {
+            border-radius: 3rem;
+            padding: .7rem 2rem;
+            font-size: inherit;
+            width: 100%;
+            transition: .2s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--text-color);
+                color: var(--bg-color);
+            }
+        }
+    }
+}
+
+#about {
+    height: 100vh;
+    position: relative;
+
+    & .bg-gradient {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to right, transparent, 30%, rgba(50, 50, 50, 0.838));
+            filter: blur(4px);
+            z-index: 1;
+        }
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: rotateY(180deg);
+        }
+    }
+
+    & article {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 2rem;
+        translate: 0 -50%;
+        margin-inline: 4rem;
+        z-index: 10;
+        line-height: min(2.5rem, 7vh);
+
+        & h1 {
+            font-size: 3rem;
+            color: var(--bg-color);
+            font-weight: 400;
+            z-index: 10;
+            margin: 0;
+        }
+
+        & p {
+            font-weight: 300;
+            z-index: 10;
+            color: var(--bg-color);
+            text-align: right;
+            margin: 0;
+        }
+
+        & button {
+            border-radius: .2rem;
+            border: 1px var(--bg-color) solid;
+            padding: .7rem 2rem;
+            font-size: inherit;
+            width: 19rem;
+            transition: .2s;
+            cursor: pointer;
+            background: none;
+            color: var(--bg-color);
+            z-index: 10;
+
+            &:hover {
+                background-color: var(--bg-color);
+                color: var(--text-color);
+            }
+        }
+    }
+
+}
+
+#contact {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+
+    & h1 {
+        font-size: 3rem;
+        font-weight: 400;
+        z-index: 10;
+        margin: 2rem 0 0;
+    }
+
+    & p {
+        font-weight: 300;
+        z-index: 10;
+        text-align: center;
+        margin: 0;
+    }
+
+    & .cards-contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        padding-inline: 2rem;
+        max-width: 700px;
+
+        & .card-contact {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: rgb(197, 197, 197);
+            color: var(--bg-color);
+            border-radius: 1rem;
+            padding: 1rem 1.5rem;
+            min-width: 15rem;
+            cursor: pointer;
+            transition: .2s;
+
+            &:hover {
+                scale: 1.02;
+                box-shadow: 0 .3rem .5rem -.1rem var(--text-color);
+            }
+
+            & svg {
+                font-size: 2.5rem;
+            }
+
+            & h2 {
+                margin: 0;
+                font-size: 1rem;
+            }
+
+            &:nth-child(1) {
+                background: linear-gradient(to bottom right, rgb(38, 204, 204), rgb(91, 91, 152));
+            }
+            &:nth-child(2) {
+                background: linear-gradient(to bottom right, rgb(56, 236, 56), rgb(37, 87, 39));
+            }
+            &:nth-child(3) {
+                background: linear-gradient(to bottom right, rgb(197, 62, 197), 70%, rgb(205, 152, 54));
+            }
+            &:nth-child(4) {
+                background: linear-gradient(to bottom right, rgb(59, 148, 243), rgb(10, 50, 123));
+            }
+
+        }
+    }
+
+}
+
+
+
+@media (max-width: 768px) {
+
+    #header {
+        position: absolute;
+
+        & nav {
+            display: none;
+        }
+    }
+
+    #initial {
+        & span {
+            letter-spacing: 4vw;
+            font-size: 20vw;
+        }
+    }
+
+    #about {
+        & article {
+            width: 90%;
+            margin-right: 2rem;
+
+            & p {
+                max-width: 90%;
+            }
+        }
+    }
+}
