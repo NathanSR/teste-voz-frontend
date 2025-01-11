@@ -1,8 +1,25 @@
-O projeto foi construido em React com Typescript por mim: Nathan Sant's. Para fim de mostrar conhecimento avançado em estilização, foi utilizado o css padrão sem nenhum tipo de biblioteca.
+# Sobre o Projeto ⚛️
 
-Para testar o projeto basta executar os comandos abaixo:
+O projeto foi construído em **React** com **TypeScript** por mim: **Nathan Santos**.  
+Como forma de demonstrar **conhecimento avançado em estilização**, utilizei **CSS puro**, sem o auxílio de bibliotecas externas. 🎨
 
-- cd ./frontend-react
-- npm run dev
+---
 
-No arquivo 'HISTORICO_DE_DESENVOLVIMENTO.md' eu faço uma breve descrição do passo a passo que tomei para construir esse projeto.
+## Como Testar o Projeto 🧪
+
+Siga os comandos abaixo para rodar o projeto localmente:
+
+1. Navegue até a pasta do frontend:
+   ```bash
+   cd ./frontend-react
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
