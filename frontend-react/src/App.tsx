@@ -1,7 +1,3 @@
-import logo from '../public/images/logo.png'
-import bg1Img from '../public/images/bg1_cleanup.png';
-import mustangImg from '../public/images/mustang.png'
-import bg2Img from '../public/images/bg2.jpg'
 import './App.css'
 
 import { AiOutlineFacebook, AiOutlineUser } from 'react-icons/ai'
@@ -15,13 +11,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 
 const cars = [
-	{ id: 1, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "./images/car1.png" },
-	{ id: 2, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "./images/car2.png" },
-	{ id: 3, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "./images/car3.png" },
-	{ id: 4, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "./images/car2.png" },
-	{ id: 5, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "./images/car1.png" },
-	{ id: 6, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "./images/car3.png" },
-	{ id: 7, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "./images/car2.png" },
+	{ id: 1, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "/car1.png" },
+	{ id: 2, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "/car2.png" },
+	{ id: 3, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "/car3.png" },
+	{ id: 4, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "/car2.png" },
+	{ id: 5, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "/car1.png" },
+	{ id: 6, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "/car3.png" },
+	{ id: 7, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "/car2.png" },
 ]
 
 function App() {
@@ -31,7 +27,7 @@ function App() {
 
 			{/* Cabeçalho */}
 			<header id='header'>
-				<img id='logo' src={logo} alt="logo" width={70} />
+				<img id='logo' src="/logo.png" alt="logo" width={70} />
 				<nav>
 					<a href="#initial">Home</a>
 					<a href="#cars">Tabela</a>
@@ -46,9 +42,9 @@ function App() {
 
 			{/* Seção inicial */}
 			<section id='initial'>
-				<img className='bg-tunnel' src={bg1Img} alt="car" />
+				<img className='bg-tunnel' src="/bg1_cleanup.png" alt="car" />
 				<span>MUSTANG</span>
-				<img className='mustang-image' src={mustangImg} alt="mustang" />
+				<img className='mustang-image' src="/mustang.png" alt="mustang" />
 			</section>
 
 			{/* Seção de lista de carros */}
@@ -106,7 +102,7 @@ function App() {
 			{/* Seção de sobre */}
 			<section id='about' className='animate-view'>
 				<div className='bg-gradient'>
-					<img src={bg2Img} alt='bg2 car' />
+					<img src="/bg2.jpg" alt='bg2 car' />
 				</div>
 				<article>
 					<h1>Mustang</h1>

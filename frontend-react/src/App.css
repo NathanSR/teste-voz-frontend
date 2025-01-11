@@ -88,7 +88,7 @@
 
     & span {
         position: absolute;
-        top: 30%;
+        top: 35%;
         left: 52%;
         transform: translate(-50%, -50%) rotateY(60deg);
         letter-spacing: 2rem;
@@ -105,10 +105,11 @@
 
     & .mustang-image {
         position: absolute;
-        top: 50%;
+        top: 48%;
         left: 50%;
         transform: translate(-50%, -10%);
-        width: 70vw;
+        width: 75vw;
+        filter: drop-shadow(0 -1rem 1rem black);
 
         animation: lefting 1s ease-in-out;
     }

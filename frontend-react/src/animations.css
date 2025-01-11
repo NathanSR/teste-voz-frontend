@@ -28,16 +28,6 @@
     }
 }
 
-/* @keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-} */
-
 .animate-view {
     animation-timeline: view();
     animation-range: entry 0% cover 20%;
