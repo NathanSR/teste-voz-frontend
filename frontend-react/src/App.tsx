@@ -1,5 +1,6 @@
 import logo from '../public/images/logo.png'
-import bg1Img from '../public/images/bg1.png'
+import bg1Img from '../public/images/bg1_cleanup.png';
+import mustangImg from '../public/images/mustang.png'
 import bg2Img from '../public/images/bg2.jpg'
 import './App.css'
 
@@ -11,8 +12,7 @@ import { FiPhone, FiUsers } from 'react-icons/fi'
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import 'swiper/css';
+import { Navigation, Autoplay } from 'swiper/modules';
 
 const cars = [
 	{ id: 1, name: 'Mustang', year: 2015, velocity: "180 Km/h", energy: "9/10", people: "8/10", img: "./images/car1.png" },
@@ -46,22 +46,31 @@ function App() {
 
 			{/* Seção inicial */}
 			<section id='initial'>
-				<img src={bg1Img} alt="car" />
+				<img className='bg-tunnel' src={bg1Img} alt="car" />
 				<span>MUSTANG</span>
-				{/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#EBEFF2" fill-opacity="1" d="M0,96L120,128C240,160,480,224,720,229.3C960,235,1200,181,1320,154.7L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg> */}
+				<img className='mustang-image' src={mustangImg} alt="mustang" />
 			</section>
 
 			{/* Seção de lista de carros */}
 			<section id='cars'>
 				<Swiper
-					modules={[Navigation]}
+					className='animate-view'
+					modules={[Navigation, Autoplay]}
 					navigation
 					spaceBetween={20}
 					slidesPerView={1}
 					breakpoints={{
 						640: { slidesPerView: 2 },
 						1200: { slidesPerView: 3 },
+						1800: { slidesPerView: 4 },
+						2200: { slidesPerView: 5 },
 					}}
+					loop={true} // Ativa o loop circular
+					autoplay={{
+						delay: 3000, // 3 segundos entre os slides
+						disableOnInteraction: false, // Continua mesmo ao interagir
+					}}
+					style={{ height: '100%', padding: '0 2rem' }}
 				>
 					{cars.map((car) => (
 						<SwiperSlide key={car.id}>
@@ -95,7 +104,7 @@ function App() {
 			</section>
 
 			{/* Seção de sobre */}
-			<section id='about'>
+			<section id='about' className='animate-view'>
 				<div className='bg-gradient'>
 					<img src={bg2Img} alt='bg2 car' />
 				</div>
@@ -112,29 +121,29 @@ function App() {
 			<section id='contact'>
 				<h1>Contato</h1>
 				<p>Entre em contato conosco através de nossos canais de atendimento:</p>
-				<div className='cards-contact'>
-					<div className='card-contact'>
+				<div className='cards-contact '>
+					<div className='card-contact animate-view'>
 						<FiPhone />
 						<div>
 							<h2>Telefone</h2>
 							<p>(11) 9999-9999</p>
 						</div>
 					</div>
-					<div className='card-contact'>
+					<div className='card-contact animate-view'>
 						<FaWhatsapp />
 						<div>
 							<h2>Whatsapp</h2>
 							<p>(11) 9999-9999</p>
 						</div>
 					</div>
-					<div className='card-contact'>
+					<div className='card-contact animate-view'>
 						<FaInstagram />
 						<div>
 							<h2>Instagram</h2>
 							<p>@mustang</p>
 						</div>
 					</div>
-					<div className='card-contact'>
+					<div className='card-contact animate-view'>
 						<AiOutlineFacebook />
 						<div>
 							<h2>Facebook</h2>

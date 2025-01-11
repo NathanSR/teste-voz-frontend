@@ -10,11 +10,11 @@
 
 @keyframes lefting {
     from {
-        transform: translateX(100%);
+        margin-left: 100vw;
     }
 
     to {
-        transform: translateX(0px);
+        margin-left: 0;
     }
 }
 
@@ -28,7 +28,7 @@
     }
 }
 
-@keyframes fadeOut {
+/* @keyframes fadeOut {
     from {
         opacity: 1;
     }
@@ -36,9 +36,9 @@
     to {
         opacity: 0;
     }
-}
+} */
 
 .animate-view {
     animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+    animation-range: entry 0% cover 20%;
 }

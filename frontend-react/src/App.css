@@ -1,4 +1,5 @@
-@import url(./animations.css);
+@import url(swiper/css);
+@import url(swiper/css/navigation);
 
 .App {
     min-height: 100vh;
@@ -15,6 +16,8 @@
     padding: .5rem 1rem;
     width: 100%;
     color: var(--bg-color);
+
+    animation: fadeIn 1s ease-in-out;
 
     & #logo {
         width: 50px;
@@ -72,11 +75,10 @@
     width: 100%;
     height: 100vh;
     position: relative;
-    /* border-radius: 0 0 100px 100px; */
     overflow: hidden;
-    /* clip-path: circle(100vw at 50% -80vh); */
+    clip-path: ellipse(100vw 55% at 50% 45%);
 
-    & img {
+    & .bg-tunnel {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -88,30 +90,50 @@
         position: absolute;
         top: 30%;
         left: 52%;
-        transform: translate(-50%, -50%) rotateY(50deg);
+        transform: translate(-50%, -50%) rotateY(60deg);
         letter-spacing: 2rem;
-        font-size: 15vw;
+        font-size: 20vw;
         font-weight: bold;
-        background: linear-gradient(to bottom, var(--bg-color), 70%, rgb(62, 62, 62));
+        background: linear-gradient(to bottom, white, 75%, rgb(0, 0, 0));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        /* text-shadow: 0 0 1rem rgba(144, 144, 144, 0.447); */
+
+        animation: fadeIn 2s ease-in-out;
+
+    }
+
+    & .mustang-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+        width: 70vw;
+
+        animation: lefting 1s ease-in-out;
     }
 
 }
 
 #cars {
-    min-height: 100vh;
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    padding-inline: max(2rem, 5vw);
+    height: 100vh;
+
+    & .swiper {
+        padding-top: 3rem !important;
+        animation-name: fadeIn;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: rgb(182, 182, 182);
+    }
 
     & .card-car {
         border-radius: 2rem;
         border: 2px var(--text-color) solid;
         padding: 2rem;
         position: relative;
-        width: 18rem;
+        width: 17rem;
         transition: .2s;
         top: 50%;
         left: 50%;
@@ -127,7 +149,7 @@
             margin: 0 auto;
             margin-top: -100px;
             display: block;
-            max-width: 220px;
+            width: 90%;
         }
 
         & h1 {
@@ -159,6 +181,7 @@
 #about {
     height: 100vh;
     position: relative;
+    animation-name: fadeIn, righting;
 
     & .bg-gradient {
         width: 100%;
@@ -267,6 +290,7 @@
         padding-inline: 2rem;
         max-width: 700px;
 
+
         & .card-contact {
             display: flex;
             align-items: center;
@@ -278,6 +302,8 @@
             min-width: 15rem;
             cursor: pointer;
             transition: .2s;
+
+            animation-name: righting, fadeIn;
 
             &:hover {
                 scale: 1.02;
@@ -327,9 +353,26 @@
     }
 
     #initial {
+        clip-path: ellipse(150vw 55% at 50% 45%);
+
         & span {
             letter-spacing: 4vw;
-            font-size: 20vw;
+            font-size: 28vw;
+        }
+
+        & .mustang-image {
+            width: 90%;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5));
+
         }
     }
 
