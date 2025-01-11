@@ -96,19 +96,15 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-   
+
 }
 
 #cars {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    padding-inline: 4rem;
-    overflow-x: auto;
-    width: 100%;
-    gap: 3rem;
-
+    padding-inline: max(2rem, 5vw);
 
     & .card-car {
         border-radius: 2rem;
@@ -117,8 +113,9 @@
         position: relative;
         width: 18rem;
         transition: .2s;
-
-        /* animation: fadeIn linear; */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
         &:hover {
             scale: 1.02;
@@ -126,7 +123,6 @@
         }
 
         &>img {
-            /* position: absolute; */
             align-self: center;
             margin: 0 auto;
             margin-top: -100px;
@@ -300,12 +296,15 @@
             &:nth-child(1) {
                 background: linear-gradient(to bottom right, rgb(38, 204, 204), rgb(91, 91, 152));
             }
+
             &:nth-child(2) {
                 background: linear-gradient(to bottom right, rgb(56, 236, 56), rgb(37, 87, 39));
             }
+
             &:nth-child(3) {
                 background: linear-gradient(to bottom right, rgb(197, 62, 197), 70%, rgb(205, 152, 54));
             }
+
             &:nth-child(4) {
                 background: linear-gradient(to bottom right, rgb(59, 148, 243), rgb(10, 50, 123));
             }
